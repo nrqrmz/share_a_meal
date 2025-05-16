@@ -46,25 +46,27 @@
   </div>
 </div>
 
-<div id="meal-map" style="display: one;">
+<!-- Henrique, this is the start of the map code that connects it to the Stimulus controller. -->
+<div  id="meal-map"
+      style="display: one;"
+      data-controller="map-index"
+      data-map-index-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" >
   <div class="map-wrapper">
-    <!-- Henrique, this is the start of the map code that connects it to the Stimulus controller. -->
     <div  id="map"
           class="map-container"
-          style="height: 60vh; border-radius: 12px;"
-          data-controller="map-index"
-          data-map-index-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" ></div>
-    <!-- This is the end of the map code. -->
+          data-map-index-target="map"
+          style="height: 60vh; border-radius: 12px;"></div>
   </div>
   <div class="map-footer">
     <div class="map-location">
       <p><strong>Montreal, QC</strong><br><small>Location is approximate</small></p>
     </div>
     <div class="map-buttons">
-      <button id="locate-btn" class="map-btn">📍 Locate</button>
+      <button id="locate-btn" class="map-btn" data-action="click->map-index#locatePosition">📍 Locate</button>
       <button id="directions-btn" class="map-btn">🧭 Directions</button>
     </div>
   </div>
 </div>
+<!-- This is the end of the map code. -->
 
 <div class="spacer-bottom"></div>
