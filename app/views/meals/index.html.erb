@@ -46,9 +46,15 @@
   </div>
 </div>
 
-<div id="meal-map" style="display: 1;">
+<div id="meal-map" style="display: one;">
   <div class="map-wrapper">
-    <div id="map" class="map-container" style="height: 60vh; border-radius: 12px;" data-controller="map-index" data-map-index-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" ></div>
+    <!-- This is the start of the map code that connects it to the Stimulus controller. -->
+    <div  id="map"
+          class="map-container"
+          style="height: 60vh; border-radius: 12px;"
+          data-controller="map-index"
+          data-map-index-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" ></div>
+    <!-- This is the end of the map code. -->
   </div>
   <div class="map-footer">
     <div class="map-location">
